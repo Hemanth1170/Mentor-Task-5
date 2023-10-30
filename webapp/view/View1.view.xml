@@ -1,0 +1,232 @@
+<mvc:View
+    controllerName="com.mindset.apps.project5.controller.View1"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:fiori="sap.ui.webc.fiori"
+    xmlns="sap.m"
+    xmlns:main="sap.ui.webc.main"
+>
+
+
+    <Page
+        
+        id="page"
+        title="{i18n>title}"
+    >
+        <HBox alignItems="Center" width="100%">
+            <Select
+                width="auto"
+                id="selectControl"
+                selectedKey="{/selectedValue}"
+            >
+                <core:Item
+                    key="default"
+                    text=""
+                />
+                <core:Item
+                    key="All"
+                    text="All"
+                />
+                <core:Item
+                    key="FN"
+                    text="First Name"
+                />
+                <core:Item
+                    key="LN"
+                    text="Last Name"
+                />
+                <core:Item
+                    key="Des"
+                    text="Designation"
+                />
+                <core:Item
+                    key="Dep"
+                    text="Department"
+                />
+                <core:Item
+                    key="Addr"
+                    text="Address"
+                />
+                <core:Item
+                    key="Mob"
+                    text="Mobile"
+                />
+            </Select>
+            <HBox width="auto">
+                <CheckBox
+                    text="enabled"
+                    id="enabledCheckBox"
+                    selected="{/enabledSelected}"
+                />
+                <CheckBox
+                    text="Editable"
+                    id="editableCheckBox"
+                    selected="{/editableSelected}"
+                />
+                <CheckBox
+                    text="Mandatory"
+                    id="mandatoryCheckBox"
+                    selected="{/mandatorySelected}"
+                />
+            </HBox>
+            <Input
+                id="inputControl"
+                value="{/inputValue}"
+                placeholder="Value"
+            />
+
+            <Button
+                width="auto"
+                id="buttonId"
+                type="Emphasized"
+                text="Submit"
+                press="onButtonPress"
+            />
+        </HBox>
+        <HBox width = "100%">
+        <VBox width = "50%">
+            <Label id="AllLabel" text="All" labelFor="InputRequired" required="{/InputForm/All/mandatorySelected}"/>
+			    <Input
+				    id="AllInputId"
+				    type="Text"
+				    required="{/InputForm/All/mandatorySelected}"
+                    enabled = "{/InputForm/All/enabledSelected}"
+                    editable="{/InputForm/All/editableSelected}"
+                    value="{/InputForm/All/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+            <Label id="FNLabel" text="First Name" labelFor="InputRequired" required="{/InputForm/FN/mandatorySelected}"/>
+			    <Input
+				    id="FNInputId"
+				    type="Text"
+				    required="{/InputForm/FN/mandatorySelected}"
+                    enabled = "{/InputForm/FN/enabledSelected}"
+                    editable="{/InputForm/FN/editableSelected}"
+                    value="{/InputForm/FN/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+            <Label id="LNLabel" text="Last Name" labelFor="InputRequired" required="{/InputForm/LN/mandatorySelected}"/>
+			    <Input
+				    id="LNInputId"
+				    type="Text"
+				    required="{/InputForm/LN/mandatorySelected}"
+                    enabled = "{/InputForm/LN/enabledSelected}"
+                    editable="{/InputForm/LN/editableSelected}"
+                    value="{/InputForm/LN/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+            <Label id="AddressLabel" text="Address" labelFor="InputRequired" required="{/InputForm/Addr/mandatorySelected}"/>
+			    <Input
+				    id="AddressInputId"
+				    type="Text"
+				    required="{/InputForm/Addr/mandatorySelected}"
+                    enabled = "{/InputForm/Addr/enabledSelected}"
+                    editable="{/InputForm/Addr/editableSelected}"
+                    value="{/InputForm/Addr/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+            <Label id="DesignationLabel" text="Designation" labelFor="InputRequired" required="{/InputForm/Des/mandatorySelected}"/>
+			    <Input
+				    id="DesignationInputId"
+				    type="Text"
+				    required="{/InputForm/Des/mandatorySelected}"
+                    enabled = "{/InputForm/Des/enabledSelected}"
+                    editable="{/InputForm/Des/editableSelected}"
+                    value="{/InputForm/Des/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+            <Label id="DeptLabel" text="Department" labelFor="InputRequired" required="{/InputForm/Dep/mandatorySelected}"/>
+			    <Input
+				    id="DeptInputId"
+				    type="Text"
+				    required="{/InputForm/Dep/mandatorySelected}"
+                    enabled = "{/InputForm/Dep/enabledSelected}"
+                    editable="{/InputForm/Dep/editableSelected}"
+                    value="{/InputForm/Dep/inputValue}"
+				    ariaLabelledBy="InputRequiredLabel"/>
+        </VBox>
+        <VBox width="50%">
+        <main:Table
+            width = "100%"
+            id="idProductsTable"
+            stickyColumnHeader="true"
+            rowClick="handleRowClick"
+            mode="SingleSelect"
+            selectionChange="handleSelectionChange"
+            rows="{
+					path: '/TableData'
+				}"
+        >
+        
+            <main:columns>
+                <main:TableColumn>
+                    <Label text="Property" />
+                </main:TableColumn>
+                <main:TableColumn>
+                    <Label text="enabled" />
+                </main:TableColumn>
+                <main:TableColumn>
+                    <Label text="Editable" />
+                </main:TableColumn>
+                <main:TableColumn>
+                    <Label text="Manditory" />
+                </main:TableColumn>
+                <main:TableColumn>
+                    <Label text="value" />
+                </main:TableColumn>
+            </main:columns>
+            <main:rows>
+                <main:TableRow type="Active">
+                    <main:cells>
+                        <main:TableCell>
+                            <main:content>
+                                <Label
+                                    id="propertyLabelId"
+                                    text="{property}"
+                                />
+                            </main:content>
+                        </main:TableCell>
+                        <main:TableCell>
+                            <main:content>
+                                <Label
+                                    id="enabledLabelId"
+                                    text="{enabled}"
+                                />
+                            </main:content>
+                        </main:TableCell>
+                        <main:TableCell>
+                            <main:content>
+                                <Label
+                                    id="editableLabelId"
+                                    text="{editable}"
+                                />
+                            </main:content>
+                        </main:TableCell>
+                        <main:TableCell>
+                            <main:content>
+                                <Label
+                                    id="manditoryLabelId"
+                                    text="{mandatory}"
+                                />
+                            </main:content>
+                        </main:TableCell>
+                        <main:TableCell>
+                            <main:content>
+                                <Label
+                                    id="valueLabelId"
+                                    text="{value}"
+                                />
+                            </main:content>
+                        </main:TableCell>
+                    </main:cells>
+                </main:TableRow>
+            </main:rows>
+        </main:Table>
+        </VBox>
+        </HBox>
+    </Page>
+</mvc:View>
+
+<!-- {
+    "property": "",
+    "editable": "",
+    "enabled": "",
+    "manditory": "",
+    "value": ""
+} -->

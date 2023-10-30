@@ -1,0 +1,50 @@
+{
+    "InputData": {
+        "selectedValue": "",
+        "enabledSelected": false,
+        "editableSelected": false,
+        "mandatorySelected": false,
+        "inputValue": ""
+    },
+    "InputForm": {
+        "FN": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        },
+        "LN": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        },
+        "Addr": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        },
+        "Dep": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        },
+        "Des": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        },
+        "All": {
+            "enabledSelected": false,
+            "editableSelected": false,
+            "mandatorySelected": false,
+            "inputValue": ""
+        }
+    },
+    "TableData": [
+        
+    ]
+}
